@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.HelloController">
+<padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+</padding>
+   <children>
+      <TextField fx:id="nomePO" promptText="Nome do Pokemon" />
+      <TextField fx:id="numPO" promptText="Numero na Pokedex" />
+      <TextField fx:id="tipoPO" promptText="Tipo do Pokemon" />
+      <TextField fx:id="hpPO" promptText="Quantia de HP" />
+      <TextField fx:id="defPO" promptText="Quantia de Desefa" />
+      <TextField fx:id="ataqPO" promptText="Quantia de Ataque" />
+      <TextField fx:id="velPO" promptText="Quantia de Velocidade" />
+      <TextField fx:id="pesoPO" promptText="Quantia de Peso" />
+      <Button mnemonicParsing="false" onAction="#addPO" text="Adicionar a Pokedex" />
+      <Label fx:id="aviso" />
+   </children>
+</VBox>
