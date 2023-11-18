@@ -1,17 +1,26 @@
 package com.example.pokedex_com_sql.Controller;
 
+import com.example.pokedex_com_sql.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.text.Text;
 import com.example.pokedex_com_sql.Model.PokemonModel; // Importando a classe PokemonModel
+import java.io.IOException;
 
 public class HelloController {
+
+    @FXML
+    private VBox painelPrefeito;
 
     @FXML
     private TextField ataqPO;
@@ -40,7 +49,7 @@ public class HelloController {
     @FXML
     private Label aviso;
 
-    //Evento para adicionar um novo pokemon
+    //Evento para adicionar um novo pokemon...
     @FXML
     void addPO(ActionEvent event) {
         PokemonModel pokemon = new PokemonModel();
@@ -59,5 +68,25 @@ public class HelloController {
         aviso.setHeaderText("Houve alguma atualização...");
         aviso.setContentText(pokemon.getMsgAviso());
         aviso.showAndWait();
+    }
+
+    //Button para voltar para a Home da Pokedex...
+    @FXML
+    void btnVoltar(ActionEvent event){
+        System.out.println("Entrou");
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HelloApplication.class.getResource("homeTela.fxml"));
+            Scene painel2 = new Scene(loader.load(), 1440, 770);
+
+            Stage stage = (Stage) painelPrefeito.getScene().getWindow();
+            stage.setTitle("Pokedex");
+            stage.setScene(painel2);
+            stage.show();
+
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela de adicionar pokemon");
+            e.printStackTrace();
+        }
     }
 }

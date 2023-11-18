@@ -105,11 +105,11 @@ public class ListPokeController {
         System.out.println("Entrou");
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HelloApplication.class.getResource("hello-view.fxml"));
+            loader.setLocation(HelloApplication.class.getResource("homeTela.fxml"));
             Scene painel2 = new Scene(loader.load(), 1440, 770);
 
             Stage stage = (Stage) painelPrefeito.getScene().getWindow();
-            stage.setTitle("Adicionar Pokemon!");
+            stage.setTitle("Home Pokedex");
             stage.setScene(painel2);
             stage.show();
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.addRegiaoController">
+   <children>
+      <Button layoutX="668.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnVoltar" text="Voltar" />
+      <Button layoutX="401.0" layoutY="500.0" mnemonicParsing="false" onAction="#onAddRegiao" text="Adicionar região" />
+      <TextField fx:id="onProf" layoutX="385.0" layoutY="267.0" promptText="Professor" />
+      <TextField fx:id="OnEquipe" layoutX="386.0" layoutY="336.0" promptText="Equipe antagonista" />
+      <TextField fx:id="onNome" layoutX="386.0" layoutY="211.0" promptText="Nome" />
+      <TextField fx:id="onCidades" layoutX="386.0" layoutY="394.0" promptText="Cidades" />
+      <TextField fx:id="onInsignias" layoutX="387.0" layoutY="443.0" promptText="Insignias" />
+   </children>
+</AnchorPane>

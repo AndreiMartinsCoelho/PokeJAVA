@@ -19,7 +19,7 @@ public class BemVindoController {
         System.out.println("Entrou");
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/example/pokedex_com_sql/pokedex-list.fxml"));
+            loader.setLocation(getClass().getResource("/com/example/pokedex_com_sql/homeTela.fxml"));
             AnchorPane painel = loader.load();
 
             painelPrefeito.getChildren().setAll(painel);

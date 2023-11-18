@@ -148,7 +148,6 @@ public class PokemonModel {
     public void inserir () {
         //Chamando o método buscarTipo
         buscarTipo();
-
         //Inserindo o pokemon na tabela Pokemon
         String sql = "INSERT INTO pokemon (nome, HP, Numero, Ataque, Defesa, Velocidade, Peso, tipo_id_tipo, imgPokemon) VALUES (?,?,?,?,?,?,?,?,?)";
         try {
