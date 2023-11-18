@@ -8,12 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import javafx.scene.text.Text;
 import com.example.pokedex_com_sql.Model.PokemonModel; // Importando a classe PokemonModel
 import java.io.IOException;
 
@@ -47,10 +44,6 @@ public class HelloController {
     private TextField velPO;
 
     @FXML
-    private Label aviso;
-
-    //Evento para adicionar um novo pokemon...
-    @FXML
     void addPO(ActionEvent event) {
         PokemonModel pokemon = new PokemonModel();
         pokemon.setNome(nomePO.getText());
@@ -70,9 +63,8 @@ public class HelloController {
         aviso.showAndWait();
     }
 
-    //Button para voltar para a Home da Pokedex...
     @FXML
-    void btnVoltar(ActionEvent event){
+    void btnVoltar(ActionEvent event) {
         System.out.println("Entrou");
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -89,4 +81,5 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
 }

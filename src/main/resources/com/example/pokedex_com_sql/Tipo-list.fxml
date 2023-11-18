@@ -3,18 +3,40 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.TipoListController">
+<AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.TipoListController">
    <children>
-      <TableView fx:id="clTipos" editable="true" layoutX="504.0" layoutY="158.0" prefHeight="390.0" prefWidth="371.0" tableMenuButtonVisible="true">
+      <TableView fx:id="clTipos" editable="true" layoutX="473.0" layoutY="316.0" prefHeight="390.0" prefWidth="494.0" style="-fx-background-color: white; -fx-border-color: black;" tableMenuButtonVisible="true">
         <columns>
-          <TableColumn fx:id="clTipo" prefWidth="75.0" text="Tipo" />
-          <TableColumn fx:id="clFraqueza" prefWidth="75.0" text="Fraqueza" />
-            <TableColumn fx:id="clForte" prefWidth="75.0" text="Forte" />
+          <TableColumn fx:id="clTipo" prefWidth="152.80001831054688" style="-fx-background-color: white;" text="Tipo" />
+          <TableColumn fx:id="clFraqueza" prefWidth="181.5999755859375" style="-fx-background-color: white;" text="Fraqueza" />
+            <TableColumn fx:id="clForte" prefWidth="152.79998779296875" style="-fx-background-color: white;" text="Forte" />
         </columns>
       </TableView>
-      <Button layoutX="1026.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnVoltar" text="Voltar" />
+      <VBox alignment="CENTER" prefHeight="203.0" prefWidth="1440.0" style="-fx-background-color: red; -fx-background-radius: 0 0 30 30;">
+         <children>
+            <ImageView fitHeight="104.0" fitWidth="104.0">
+               <image>
+                  <Image url="@img/pokebola_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Button layoutX="1229.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2;" text="Voltar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Text fontSmoothingType="LCD" layoutX="484.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista dos tipos já cadastrados" wrappingWidth="471.42010498046875">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

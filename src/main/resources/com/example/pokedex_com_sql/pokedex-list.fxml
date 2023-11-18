@@ -12,7 +12,16 @@
 
 <AnchorPane fx:id="painelPrefeito" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1440.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.ListPokeController">
    <children>
-      <TableView fx:id="clTabela" layoutX="63.0" layoutY="198.0" prefHeight="515.0" prefWidth="1314.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 30;" tableMenuButtonVisible="true">
+      <VBox alignment="CENTER" prefHeight="203.0" prefWidth="1440.0" style="-fx-background-color: red; -fx-background-radius: 0 0 30 30;">
+         <children>
+            <ImageView fitHeight="104.0" fitWidth="104.0">
+               <image>
+                  <Image url="@img/pokebola_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <TableView fx:id="clTabela" layoutX="62.0" layoutY="280.0" prefHeight="386.0" prefWidth="1314.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 30;" tableMenuButtonVisible="true">
         <columns>
             <TableColumn fx:id="clNome" prefWidth="75.0" style="-fx-background-color: white;" text="Nome" />
             <TableColumn fx:id="clNomeTipo" prefWidth="75.0" style="-fx-background-color: white;" text="Tipo" />
@@ -27,26 +36,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="102.0" prefWidth="1440.0" style="-fx-border-color: red; -fx-background-color: white; -fx-border-width: 0 0 2 0;">
-         <children>
-            <ImageView fitHeight="70.0" fitWidth="70.0">
-               <image>
-                  <Image url="@img/pokebola_logo.png" />
-               </image>
-            </ImageView>
-            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Pokedex em JAVA">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <Text fill="RED" layoutX="441.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista dos pokemons já cadastrados" wrappingWidth="557.8201293945312">
+      <Text fontSmoothingType="LCD" layoutX="440.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista dos pokemons já cadastrados" wrappingWidth="557.8201293945312">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
       </Text>
-      <Button layoutX="1227.0" layoutY="126.0" mnemonicParsing="false" onAction="#onVoltar" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2;" text="Voltar" textFill="WHITE">
+      <Button layoutX="1218.0" layoutY="217.0" mnemonicParsing="false" onAction="#onVoltar" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2;" text="Voltar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

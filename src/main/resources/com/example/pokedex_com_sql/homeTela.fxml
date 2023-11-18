@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.HomeTelaController">
    <children>
-      <VBox accessibleRole="BUTTON" alignment="CENTER" cacheShape="false" centerShape="false" fillWidth="false" layoutY="-2.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="244.0" prefWidth="1440.0" scaleShape="false" style="-fx-background-color: red; -fx-background-radius: 0 0 30 30; -fx-border-radius: 0 0 30 30;">
-         <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquise os Pokemon quando quiser e a hora que quiser">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
-            <TextField onAction="#onPesqui" prefHeight="51.0" prefWidth="744.0" promptText="Pesquisar pokemons" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-radius: 40;">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </TextField>
-         </children>
-      </VBox>
       <Button layoutX="563.0" layoutY="295.0" mnemonicParsing="false" onAction="#onPokedex" prefHeight="92.0" prefWidth="314.0" style="-fx-background-color: #00e472; -fx-background-radius: 13; -fx-border-radius: 13;" text="Pokedex" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
@@ -97,5 +81,14 @@
             </ImageView>
          </graphic>
       </Button>
+      <VBox alignment="CENTER" prefHeight="203.0" prefWidth="1440.0" style="-fx-background-color: red; -fx-background-radius: 0 0 30 30;">
+         <children>
+            <ImageView fitHeight="104.0" fitWidth="104.0">
+               <image>
+                  <Image url="@img/pokebola_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
