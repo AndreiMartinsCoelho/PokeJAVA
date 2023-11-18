@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.TipoListController">
+   <children>
+      <TableView fx:id="clTipos" editable="true" layoutX="504.0" layoutY="158.0" prefHeight="390.0" prefWidth="371.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="clTipo" prefWidth="75.0" text="Tipo" />
+          <TableColumn fx:id="clFraqueza" prefWidth="75.0" text="Fraqueza" />
+            <TableColumn fx:id="clForte" prefWidth="75.0" text="Forte" />
+        </columns>
+      </TableView>
+      <Button layoutX="1026.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnVoltar" text="Voltar" />
+   </children>
+</AnchorPane>
