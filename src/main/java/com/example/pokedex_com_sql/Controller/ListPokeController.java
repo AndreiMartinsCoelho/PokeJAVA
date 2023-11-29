@@ -7,21 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import com.example.pokedex_com_sql.Model.PokemonModel;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Optional;
+
 import com.example.pokedex_com_sql.Model.DB;
 import javafx.stage.Stage;
 
@@ -34,6 +30,9 @@ public class ListPokeController {
 
     @FXML
     private TableColumn<PokemonModel, String> clNome;
+
+    @FXML
+    private TableColumn<PokemonModel, Integer> clID;
 
     @FXML
     private TableColumn<PokemonModel, Float> clNumero;
@@ -65,6 +64,7 @@ public class ListPokeController {
     //Método para listar os pokemons
     @FXML
     public void initialize(){
+        clID.setCellValueFactory(new PropertyValueFactory<>("idPokemon"));
         clNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         clNumero.setCellValueFactory(new PropertyValueFactory<>("Numero"));
         clAtaque.setCellValueFactory(new PropertyValueFactory<>("Ataque"));
@@ -83,6 +83,7 @@ public class ListPokeController {
                     "ORDER BY p.numero");
             while (rs.next()) {
                 PokemonModel pokemon = new PokemonModel();
+                pokemon.setIdPokemon(rs.getInt("idPokemon"));
                 pokemon.setNome(rs.getString("nome"));
                 pokemon.setNumero(rs.getFloat("Numero"));
                 pokemon.setHP(rs.getFloat("HP"));
@@ -117,6 +118,57 @@ public class ListPokeController {
             System.out.println("Erro ao carregar a tela de adicionar pokemon");
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void handleExcluirButton(ActionEvent event) {
+        PokemonModel pokemon = clTabela.getSelectionModel().getSelectedItem();
+        if (pokemon != null) {
+            // Substitua o trecho no método handleExcluirButton por este código
+            String sql = "DELETE FROM pokemon WHERE idPokemon = ?";
+            try {
+                if (!confirmarExclusao()) return;
+                PreparedStatement ps = DB.prepareStatement(sql);
+                ps.setInt(1, pokemon.getIdPokemon());
+                ps.executeUpdate();
+                ps.close();
+                lista.remove(pokemon);
+                exibirAlerta("Sucesso", "Pokemon excluído com sucesso!");
+            } catch (SQLException e) {
+                exibirAlerta("Erro", "Erro ao excluir pokemon!");
+                e.printStackTrace();
+            }
+
+        } else {
+            exibirAlerta("Erro", "Selecione um pokemon para excluir!");
+        }
+    }
+
+    private boolean confirmarExclusao() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmação de Exclusão");
+        alert.setHeaderText(null);
+        alert.setContentText("Tem certeza que deseja excluir esta região?");
+
+        // Botões de confirmação
+        ButtonType buttonTypeSim = new ButtonType("Sim", ButtonBar.ButtonData.YES);
+        ButtonType buttonTypeNao = new ButtonType("Não", ButtonBar.ButtonData.NO);
+
+        alert.getButtonTypes().setAll(buttonTypeSim, buttonTypeNao);
+
+        // Mostra o alerta e espera pela resposta do usuário
+        Optional<ButtonType> result = alert.showAndWait();
+
+        // Retorna true se o usuário confirmar, false caso contrário
+        return result.isPresent() && result.get() == buttonTypeSim;
+    }
+
+    private void exibirAlerta(String titulo, String mensagem) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensagem);
+        alert.showAndWait();
     }
 
 }

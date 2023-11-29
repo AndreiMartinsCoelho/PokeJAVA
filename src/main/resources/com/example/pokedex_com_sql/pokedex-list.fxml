@@ -23,6 +23,7 @@
       </VBox>
       <TableView fx:id="clTabela" layoutX="62.0" layoutY="280.0" prefHeight="386.0" prefWidth="1314.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 30;" tableMenuButtonVisible="true">
         <columns>
+            <TableColumn fx:id="clID" prefWidth="75.0" style="-fx-background-color: white;" text="idPokemon" />
             <TableColumn fx:id="clNome" prefWidth="75.0" style="-fx-background-color: white;" text="Nome" />
             <TableColumn fx:id="clNomeTipo" prefWidth="75.0" style="-fx-background-color: white;" text="Tipo" />
             <TableColumn fx:id="clNumero" prefWidth="75.0" style="-fx-background-color: white;" text="Numero" />
@@ -46,5 +47,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+       <Button layoutX="138.0" layoutY="227.0" onAction="#handleExcluirButton" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: Black; -fx-border-width: 2;" text="Excluir">
+           <font>
+               <Font name="System Bold" size="16.0" />
+           </font>
+       </Button>
    </children>
 </AnchorPane>

@@ -14,9 +14,10 @@
    <children>
       <TableView fx:id="clTipos" editable="true" layoutX="473.0" layoutY="316.0" prefHeight="390.0" prefWidth="494.0" style="-fx-background-color: white; -fx-border-color: black;" tableMenuButtonVisible="true">
         <columns>
+            <TableColumn fx:id="clID" prefWidth="75.0" style="-fx-background-color: white;" text="idTipo" />
           <TableColumn fx:id="clTipo" prefWidth="152.80001831054688" style="-fx-background-color: white;" text="Tipo" />
-          <TableColumn fx:id="clFraqueza" prefWidth="181.5999755859375" style="-fx-background-color: white;" text="Fraqueza" />
             <TableColumn fx:id="clForte" prefWidth="152.79998779296875" style="-fx-background-color: white;" text="Forte" />
+          <TableColumn fx:id="clFraqueza" prefWidth="181.5999755859375" style="-fx-background-color: white;" text="Fraqueza" />
         </columns>
       </TableView>
       <VBox alignment="CENTER" prefHeight="203.0" prefWidth="1440.0" style="-fx-background-color: red; -fx-background-radius: 0 0 30 30;">
@@ -38,5 +39,10 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Text>
+      <Button layoutX="282.0" layoutY="233.0" onAction="#handleExcluirButton" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: Black; -fx-border-width: 2;" text="Excluir">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

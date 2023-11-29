@@ -12,8 +12,9 @@
 
 <AnchorPane fx:id="painelPrefeito" prefHeight="770.0" prefWidth="1440.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokedex_com_sql.Controller.RegiaoLIstController">
    <children>
-      <TableView fx:id="clRegiao" editable="true" layoutX="62.0" layoutY="292.0" prefHeight="386.0" prefWidth="1314.0" style="-fx-background-image: white; -fx-border-color: black;" tableMenuButtonVisible="true">
+      <TableView fx:id="clRegiao" layoutX="62.0" layoutY="292.0" prefHeight="386.0" prefWidth="1314.0" style="-fx-background-image: white; -fx-border-color: black;" tableMenuButtonVisible="true">
         <columns>
+            <TableColumn fx:id="clID" prefWidth="75.0" style="-fx-background-color: white;" text="idRegiao" />
           <TableColumn fx:id="clNome" prefWidth="75.0" style="-fx-background-color: white;" text="Nome" />
             <TableColumn fx:id="clProfessor" prefWidth="75.0" style="-fx-background-color: white;" text="Professor" />
             <TableColumn fx:id="clEquipe" prefWidth="105.5999755859375" style="-fx-background-color: white;" text="Equipe" />
@@ -40,5 +41,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+       <Button layoutX="138.0" layoutY="227.0" onAction="#handleExcluirButton" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: Black; -fx-border-width: 2;" text="Excluir">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+       </Button>
    </children>
 </AnchorPane>

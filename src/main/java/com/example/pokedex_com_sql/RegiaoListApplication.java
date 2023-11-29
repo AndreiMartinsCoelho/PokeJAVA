@@ -9,7 +9,7 @@ import java.io.IOException;
 public class RegiaoListApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Regiao-list.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(RegiaoListApplication.class.getResource("Regiao-list.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1440, 770);
         stage.setTitle("Regiões");
         stage.setScene(scene);
@@ -20,3 +20,4 @@ public class RegiaoListApplication extends Application {
         launch();
     }
 }
+

@@ -130,7 +130,7 @@ public class PokemonModel {
 
     //Adicionar o tipo na tabela Pokemon pelo nome
     public void buscarTipo() {
-        String sql = "SELECT idTipo FROM tipo WHERE nome = ?";
+        String sql = "SELECT idTipo FROM tipo WHERE Nome = ?";
         try {
             PreparedStatement ps = DB.prepareStatement(sql);
             ps.setString(1, this.nomeTipo);

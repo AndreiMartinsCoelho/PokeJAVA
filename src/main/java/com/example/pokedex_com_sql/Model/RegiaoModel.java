@@ -1,11 +1,9 @@
 package com.example.pokedex_com_sql.Model;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 //Importando a classe DB
 import com.example.pokedex_com_sql.Model.DB;
+
 public class RegiaoModel {
     private int idRegiao;
     private String nomeRegiao;
@@ -101,6 +99,29 @@ public class RegiaoModel {
             this.msgAviso = "Região adicionada com sucesso!";
         } catch (SQLException e) {
             this.msgAviso = "Erro ao adicionar região!";
+            e.printStackTrace();
+        }
+    }
+
+    //Função para excluir uma região no banco de dados...
+    public void excluirRegiao() {
+        String sql = "DELETE FROM regioes WHERE idRegiao = ?";
+        try {
+            PreparedStatement stmt = DB.prepareStatement(sql);
+            stmt.setInt(1, this.idRegiao);
+
+            int linhasAfetadas = stmt.executeUpdate();
+            stmt.close();
+
+            if (linhasAfetadas > 0) {
+                // Exclusão bem-sucedida
+                System.out.println("Região excluída com sucesso!");
+            } else {
+                // Nenhuma linha afetada (nenhuma região com o ID especificado)
+                System.out.println("Nenhuma região encontrada para exclusão com o ID: " + this.idRegiao);
+            }
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
